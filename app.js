@@ -165,6 +165,8 @@ function reverseStr(str) {
          resultRef.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days! 😔`;
        }
       }, 3000);
+    } else {
+      resultRef.innerText = "Please enter your dob 😠";
     }
   }
   
