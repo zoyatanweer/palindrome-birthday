@@ -1,16 +1,16 @@
-function reverseStr(str) {
+const reverseStr = (str) => {
     var listOfChars = str.split('');
     var reverseListOfChars = listOfChars.reverse();
     var reversedStr = reverseListOfChars.join('');
     return reversedStr;
   }
   
-  function isPalindrome(str) {
+  const isPalindrome = (str) => {
     var reverse = reverseStr(str);
     return str === reverse;
   }
   
-  function convertDateToStr(date) {
+  const convertDateToStr = (date) => {
   
     var dateStr = { day: '', month: '', year: '' };
   
@@ -32,7 +32,7 @@ function reverseStr(str) {
     return dateStr;
   }
   
-  function getAllDateFormats(date) {
+  const getAllDateFormats = (date) => {
     var dateStr = convertDateToStr(date);
   
     var ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
@@ -45,7 +45,7 @@ function reverseStr(str) {
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
   }
   
-  function checkPalindromeForAllDateFormats(date){
+  const checkPalindromeForAllDateFormats = (date) => {
     var listOfPalindromes = getAllDateFormats(date);
   
     var flag = false;
@@ -61,7 +61,7 @@ function reverseStr(str) {
   }
   
   // check for leap year
-  function isLeapYear(year){
+  const isLeapYear = (year) => {
     if(year % 400 === 0){
       return true;
     }
@@ -75,7 +75,7 @@ function reverseStr(str) {
   }
   
   // gets next date
-  function getNextDate(date){
+  const getNextDate =(date) => {
     var day = date.day + 1;  // increment the day  => 32
     var month = date.month;
     var year = date.year;
@@ -121,7 +121,7 @@ function reverseStr(str) {
   }
   
   // get next palindrome date
-  function getNextPalindromeDate(date){
+  const getNextPalindromeDate = (date) => {
     var ctr = 0;
     var nextDate = getNextDate(date);
   
@@ -136,12 +136,12 @@ function reverseStr(str) {
     return [ctr, nextDate];
   }
   
-  var dateInputRef = document.querySelector('#bday-input');
-  var showBtnRef = document.querySelector('#show-btn');
-  var resultRef = document.querySelector('#result');
+  const dateInputRef = document.querySelector('#bday-input');
+  const showBtnRef = document.querySelector('#show-btn');
+  const resultRef = document.querySelector('#result');
   
-  function clickHandler(e){
-    var bdayStr = dateInputRef.value; // 2020-10-11
+  const clickHandler = (e) =>{
+    const bdayStr = dateInputRef.value; // 2020-10-11
     
     if(bdayStr !== ''){
       var listOfDate = bdayStr.split('-'); // ['2020', '10', '11']
